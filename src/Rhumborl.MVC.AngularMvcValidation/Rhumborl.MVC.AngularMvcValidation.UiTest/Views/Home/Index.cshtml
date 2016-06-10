@@ -1,0 +1,44 @@
+﻿@model Rhumborl.MVC.AngularMvcValidation.UiTest.Models.TopLevelModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Basic MVC validation</h1>
+    <p class="lead">Uses standard built-in validators and a custom validator.</p>
+</div>
+
+<div class="container" ng-app="myValidation" ng-controller="ctrl1">
+
+    <ng-include src="'/partials/EditTopLevelModel.html'" />
+
+    <!--
+    <div>ID: @Html.TextBoxFor(m => m.ID) @Html.ValidationMessageFor(m => m.ID)</div>
+    <div>Name: @Html.TextBoxFor(m => m.Name) @Html.ValidationMessageFor(m => m.Name)</div>
+    <div>Value: @Html.TextBoxFor(m => m.Child.Value) @Html.ValidationMessageFor(m => m.Child.Value)</div>
+    <div>Custom Property: @Html.TextBoxFor(m => m.Child.CustomProp) @Html.ValidationMessageFor(m => m.Child.CustomProp)</div>
+    -->
+
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript" src="~/Scripts/mycustomvalidator.js"></script>
+    <script type="text/javascript">
+        angular.module("myValidation", ['ngValidation'])
+        .controller('ctrl1', function ($scope, validationMetadata) {
+            $scope.viewModel = {
+                ID: 1,
+                Name: "Bob",
+                Child: {
+                    Value: "Some Value",
+                    CustomProp: 'Custom value'
+                }
+            };
+
+            $scope.saveModel = function (ngval) {
+                console.log($scope.viewModel);
+            }
+        });
+    </script>
+}

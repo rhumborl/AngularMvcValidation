@@ -1,0 +1,11 @@
+﻿<form name="form" ngval-type="Rhumborl.MVC.AngularMvcValidation.UiTest.Models.TopLevelModel" novalidate ng-submit="ngval.validate() && saveModel()">
+
+    <div>ID: <input type="text" ng-model="viewModel.ID" name="ID" ngval> <span ngval-message="ID"></span></div>
+    <div>Name: <input type="text" ng-model="viewModel.Name" ngval name="Name"> <span ngval-message="Name"></span></div>
+    <div>Value: <input type="text" ng-model="viewModel.Child.Value" ngval name="Child.Value"> <span ngval-message="Child.Value"></span></div>
+    <div>Custom Property: <input type="text" ng-model="viewModel.Child.CustomProp" ngval name="Child.CustomProp"> <span ngval-message="Child.CustomProp"></span></div>
+
+    <div><input type="submit" name="name" value="Submit" /></div>
+
+    {{form.$valid}}
+</form>
