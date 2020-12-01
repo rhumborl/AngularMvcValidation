@@ -5,7 +5,7 @@
 		<span class="field-validation-error" data-valmsg-for="ID" data-valmsg-replace="true">The ID field is required.</span>
 	</div>
 	<div>
-		Name;
+		Name:
 		<input class="input-validation-error" data-val="true" data-val-length="The field Name must be a string with a maximum length of 10." data-val-length-max="10" data-val-required="The Name field is required." id="Name" name="Name" type="text" value="" />
 		<span class="field-validation-error" data-valmsg-for="Name" data-valmsg-replace="true">The Name field is required.</span>
 	</div>
